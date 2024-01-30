@@ -45,6 +45,11 @@ public class BinaryTree {
 
         bfs.inOrder(bTree.root);
 
+        BST bst = new BST();
+
+
+
+
     }
 
 
