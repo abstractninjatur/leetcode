@@ -7,24 +7,39 @@ import java.util.Queue;
 
 public class BFS {
 
-    Queue<TreeNode> queue;
 
-    public BFS(Queue<TreeNode> queue){
-        this.queue = new LinkedList<>();
+
+    public BFS( ){
+
     }
 
     public List<TreeNode> levelOrder(TreeNode root){
+        Queue<TreeNode> queue = new LinkedList<>();
         List<TreeNode> levelOrderTraversal = new ArrayList<>();
 
         queue.add(root);
         while(!queue.isEmpty()) {
             TreeNode curr = queue.remove();
-            levelOrderTraversal.add(curr);
-            queue.add(curr.left);
-            queue.add(curr.right);
+            System.out.print(curr.val + " ");
+            if(curr!=null) {
+                queue.add(curr.left);
+                queue.add(curr.right);
+            }
+
         }
 
         return levelOrderTraversal;
+    }
+
+
+
+
+    public void inOrder(TreeNode node){
+        if(node ==null ) return;
+
+        inOrder(node.left);
+        System.out.print(node.val+" ");
+        inOrder(node.right);
     }
 
 
