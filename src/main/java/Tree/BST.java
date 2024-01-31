@@ -19,7 +19,10 @@ public class BST {
         }
     }
 
-    public TreeNode add(TreeNode node, int value){
+    public void addNewValue(int value){
+        add(root, value);
+    }
+    private TreeNode add(TreeNode node, int value){
         if(node == null ){
             node = new TreeNode(value);
             return node;

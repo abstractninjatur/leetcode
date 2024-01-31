@@ -1,9 +1,6 @@
 package Tree;
 
-import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
 
 public class BinaryTree {
 
@@ -45,9 +42,12 @@ public class BinaryTree {
 
         bfs.inOrder(bTree.root);
 
-        BST bst = new BST();
+        BST bst = new BST(valueList);
+
+        bst.addNewValue(10);
 
 
+        bfs.inOrder(bst.root);
 
 
     }
