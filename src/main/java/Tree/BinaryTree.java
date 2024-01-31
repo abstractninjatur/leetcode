@@ -36,18 +36,31 @@ public class BinaryTree {
 
     public static void main(String[] args) {
 
-        List<Integer> valueList =  List.of(1,2,3,4,5,6,7,8);
+        List<Integer> valueList =  List.of(5,4,1,7,2,3,6,8);
         BinaryTree bTree = new BinaryTree(valueList);
         BFS bfs = new BFS();
 
-        bfs.inOrder(bTree.root);
+//        bfs.inOrder(bTree.root);
 
         BST bst = new BST(valueList);
 
+        System.out.println("\nLevel Order : ");
+
+        bfs.levelOrder(bst.root);
+
+        System.out.println("\nAdding value 10 to this tree.....");
+
         bst.addNewValue(10);
 
+        System.out.println("New Values : ");
 
-        bfs.inOrder(bst.root);
+
+        System.out.println("\nLevel Order : ");
+
+        bfs.levelOrder(bst.root);
+
+        System.out.println("\nBST in ZigZag Order : \n");
+        bfs.zigzagLevelOrder(bst.root);
 
 
     }
