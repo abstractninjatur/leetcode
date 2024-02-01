@@ -1,5 +1,6 @@
 package Tree;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class BST {
@@ -37,6 +38,26 @@ public class BST {
 
         return node;
     }
+
+    public boolean isUniValue(){
+        LinkedList<TreeNode> queue = new LinkedList<>();
+
+        queue.add(root);
+        int value = root.val;
+        while(!queue.isEmpty()) {
+            TreeNode node= queue.poll();
+
+            if(value != node.val){
+                return false;
+            }
+
+            if(node.left!=null) queue.add(node.left);
+            if(node.right!=null) queue.add(node.right);
+        }
+
+        return true;
+    }
+
 
 
 }
