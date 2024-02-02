@@ -66,4 +66,25 @@ public class BinaryTree {
     }
 
 
+    public boolean isSymmetric(TreeNode root) {
+
+
+        return isSymmetricCheck(root.left,root.right);
+    }
+
+    private boolean isSymmetricCheck(TreeNode leftNode, TreeNode rightNode){
+
+        if(leftNode != null && rightNode == null) return false;
+
+        if(leftNode == null && rightNode != null) return false;
+        if( leftNode == null && rightNode == null ) return true;
+
+        if(leftNode.val != rightNode.val) return false;
+
+        boolean check1 =  isSymmetricCheck(leftNode.left,rightNode.right);
+        boolean check2 =  isSymmetricCheck(leftNode.right,rightNode.left);
+
+        return (check1 && check2);
+    }
+
 }
